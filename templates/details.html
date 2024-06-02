@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="container poetsen-one-regular">
+		<div class="card mb-2">
+			<div class="card-header d-flex justify-content-between  align-items-center bg-secondary">
+			<a class="text-white link-offset-2 link-underline link-underline-opacity-0" href="#">{{ question.user.username }}</a>
+			<span class="text-white small" >{{ question.date.strftime('%b %d, %Y') }}</span>
+			<a class="btn bg-primary text-white" href="/bible/{{ question.quote }}">{{ question.quote }}</a>
+			</div>
+			<div class="body p-3">
+				<h5 class="mb-2"> {{ question.text }}</h5>
+			{% set opts = question.options.split('|') %}
+			<ul class="list-group">
+			{% for opt in opts %}
+				{% if opt == question.answer %}
+					<li class="list-group-item list-group-item-action bg-primary poetsen-one-regular text-secondary">{{ opt }}</li>
+				{% else %}
+					<li class="list-group-item list-group-item-action poetsen-one-regular text-secondary">{{ opt }}</li>
+				{% endif %}
+			{% endfor %}
+			</ul>
+			</div>
+
+		</div>
+		<div class="options d-flex justify-content-between">
+			<form action="/delete/{{ question.id }}" method="post" accept-charset="utf-8" id="delete" class="d-none">
+
+			</form>
+			<button class="btn btn-danger" type="submit" form="delete" data-toggldetails_submit-target="#delete-modal">Delete</button>
+			<a class="btn btn-primary" href="/edit/{{ question.id }}">Edit</a>
+		</div>
+		<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+		      </div>
+		      <div class="modal-body">
+				***
+		      </div>
+		      <div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			<button type="button" class="btn btn-dnger">Delete</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+	<div class="d-flex flex-wrap con books-container">
+		{% for book in books %}
+		<div class="book border d-flex align-items-center justify-content-center m-0 bg-dark" style="width:60px;height:60px;color:{{ book.color }}">
+				{{ book.short_name }}
+		</div>
+		{% endfor %}
+	</div>
+	<div class="d-none chapters-container con">
+	</div>
+	<div class="d-none verses-container con"></div>
+</div>
+<script src="/static/bible-picker.js" charset="utf-8"></script>
+{% endblock %}

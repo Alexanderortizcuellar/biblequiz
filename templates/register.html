@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container p-4">
+	<form class="" action="{{ url_for('register') }}" method="post">
+		{{ form.csrf_token }}
+		{% if form.name.errors %}
+    		<ul class="errors">
+    		{% for error in form.name.errors %}
+        		<li>{{ error }}</li>
+    		{% endfor %}
+    		</ul>
+		{% endif %}
+		<h2 class="text-center">Sign up</h2>
+		<p class="text-center">Already a member <a class="" href="{{ url_for('login') }}">Log in</a></p>
+		<div class="d-flex gap-1 mb-3">
+			{{ form.name(class_="form-control", placeholder="Name") }}
+			{{ form.lastname(class_="form-control", placeholder="Last name") }}
+		</div>
+			{{ form.email(class_="form-control mb-2", placeholder="Email") }}
+			{{ form.username(class_="form-control mb-2", placeholder="Username") }}
+			{{ form.password(class_="form-control mb-2", placeholder="Password") }}
+			{{ form.password_2(class_="form-control mb-2", placeholder="Confirm password") }}
+		<div class="d-flex mt-3">
+			<button class="btn btn-primary" type="submit" style="width: 100%;">Submit</button>
+		</div>
+	</form>
+</div>
+{% endblock %}

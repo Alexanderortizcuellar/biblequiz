@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="container">
+		<div class="card p-3 mt-2">
+			{% if question %}
+			<h5>Today's question</h5>
+			<hr>
+			<a class="link-offset-2 link-underline link-underline-opacity-0 poetsen-one-regular" href="{{ url_for('details', id=question.id) }}">{{ question.text }}</a>
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}

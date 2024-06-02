@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container p-2">
+<form  class="p-2 rounded bg-light" action="create" method="post">
+	<div class="mb-3">
+	<label>Question</label>
+	<textarea type="text" class="form-control" name="text" id="text" required style="border:2px solid rgb(220,220,220)"></textarea>
+	</div>
+	<div class="mb-3">
+	<label>Answer</label>
+	<input type="text" class="form-control" name="answer" id="answer" required style="border:2px solid rgb(220,220,220)">
+	</div>
+	<div class="mb-2">
+	<label>Options</label>
+	<input type="text" class="form-control" name="options" id="options" required  style="border:2px solid rgb(220,220,220)">
+	</div>
+	<div class="mb-2">
+	<label class="form-label">Quote</label>
+	<input type="text" class="form-control" name="quote" id="quote" required  style="border:2px solid rgb(220,220,220)">
+	</div>
+	<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+{% endblock %}
