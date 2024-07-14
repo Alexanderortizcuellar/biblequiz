@@ -3,21 +3,42 @@
 {% block content %}
 <div class="container p-2">
 <form  class="p-2 rounded bg-light" action="create" method="post">
+	{{ form.csrf_token }}
 	<div class="mb-3">
-	<label>Question</label>
-	<textarea type="text" class="form-control" name="text" id="text" required style="border:2px solid rgb(220,220,220)"></textarea>
+	{{ form.text.label }}
+	{% if form.text.errors %}
+		{% for error in form.text.errors %}
+			<span class="text-danger">{{ error }}</span>
+		{% endfor %}
+	{% endif %}
+	{{ form.text(class_="form-control", style="border:2px solid rgb(220,220,220)") }}
 	</div>
 	<div class="mb-3">
-	<label>Answer</label>
-	<input type="text" class="form-control" name="answer" id="answer" required style="border:2px solid rgb(220,220,220)">
+	{{ form.answer.label }}
+	{% if form.answer.errors %}
+		{% for error in form.answer.errors %}
+			<span class="text-danger">{{ error }}</span>
+		{% endfor %}
+	{% endif %}
+	{{ form.answer(class_="form-control", style="border:2px solid rgb(220,220,220)") }}
 	</div>
 	<div class="mb-2">
-	<label>Options</label>
-	<input type="text" class="form-control" name="options" id="options" required  style="border:2px solid rgb(220,220,220)">
+	{{ form.options.label }}
+	{% if form.options.errors %}
+		{% for error in form.options.errors %}
+			<span class="text-danger">{{ error }}</span>
+		{% endfor %}
+	{% endif %}
+	{{ form.options(class_="form-control", style="border:2px solid rgb(220,220,220)") }}
 	</div>
 	<div class="mb-2">
-	<label class="form-label">Quote</label>
-	<input type="text" class="form-control" name="quote" id="quote" required  style="border:2px solid rgb(220,220,220)">
+	{{ form.quote.label }}
+	{% if form.quote.errors %}
+		{% for error in form.quote.errors %}
+			<span class="text-danger">{{ error }}</span>
+		{% endfor %}
+	{% endif %}
+	{{ form.quote(class_="form-control", style="border:2px solid rgb(220,220,220)") }}
 	</div>
 	<button type="submit" class="btn btn-primary">Submit</button>
 </form>

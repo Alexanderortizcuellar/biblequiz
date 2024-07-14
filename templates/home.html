@@ -9,5 +9,11 @@
 			<a class="link-offset-2 link-underline link-underline-opacity-0 poetsen-one-regular" href="{{ url_for('details', id=question.id) }}">{{ question.text }}</a>
 			{% endif %}
 		</div>
+		<div class="card details p-3 mt-2">
+			<p>Total questions: {{ count }}</p>
+		</div>
+		<div class="card p-3 mt-2">
+			<a href="/create">Create a Question</a>
+		</div>
 	</div>
 {% endblock %}

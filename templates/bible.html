@@ -2,11 +2,16 @@
 
 {% block content %}
 <div class="container">
-	<h3 style="color:rgb(170, 74, 68);font-weight: bold;">{{ chapter }}</h3>
+	<h3 style="color:rgb(170, 74, 68);font-weight: bold;">{{ book }} {{ chapter }}</h3>
 	{% for verse in verses %}
 	<div id="#{{ verse.verse }}">
-			<p> <span style="margin-right: 8px;color: #117c58;font-weight: bold;">{{ verse.verse }}</span>{{ verse.text }}</p>
+		<p id="verse-{{ verse.verse }}"> <span style="margin-right: 8px;color: #117c58;font-weight: bold;">{{ verse.verse }}</span>{{ verse.text }}</p>
 		</div>
 	{% endfor %}
 </div>
+<script>
+	window.onload = () =>{
+		document.querySelector("p#verse-{{ verse }}").scrollIntoView()
+	}
+</script>
 {% endblock %}
