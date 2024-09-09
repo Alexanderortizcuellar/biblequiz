@@ -1,0 +1,30 @@
+<div class="wrap mb-2 card p-2 p-lg-3 shadow shadow-sm">
+	<div class="d-flex justify-content-between align-items-center py-1">
+		<label class="form-label fw-bold" for="options">Options</label>
+
+		<button type="button" class="btn btn-secondary btn-sm">
+			<i class="bi bi-copy mx-1 copy-options"></i>
+		</button>
+	</div>
+	<div class="wrap-actions d-flex gap-1 align-items-center">
+		<input class="form-control border border-1 border-dark-subtle" type="text" name="options" id="options"
+													  style="color: #474747" value="{{ question.options }}" required />
+		<div class="wrap-btn dropdown">
+			<button type="button" class="btn btn-primary btn-sm shuffle-btn dropdown-toggle"
+				data-bs-toggle="dropdown">
+				Suffle
+			</button>
+			<ul class="dropdown-menu">
+				<li><a class="dropdown-item" href="#">Shuffle</a></li>
+				<li><a class="dropdown-item" href="#">Sort &#8593;</a></li>
+				<li><a class="dropdown-item" href="#">Sort &#8595;</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="wrap-details mt-lg-3">
+		<div class="wrap-detail-controls d-flex justify-content-between py-1">
+			<a class="small text-decoration-none" href="#">More Actions</a>
+			<a class="small text-decoration-none" href="#">Next</a>
+		</div>
+	</div>
+</div>

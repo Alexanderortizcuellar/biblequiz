@@ -1,0 +1,16 @@
+<div class="wrap mb-2 card p-2 p-lg-3 shadow shadow-sm">
+	<div class="d-flex justify-content-between align-items-center py-1">
+		<label class="form-label fw-bold" for="answer">Answer</label>
+		<button type="button" class="btn btn-secondary btn-sm">
+			<i class="bi bi-copy mx-1 copy-answer"></i>
+		</button>
+	</div>
+	<select class="form-select border border-1 border-dark-subtle" name="answer" id="answer"
+										     style="color: #474747" value="{{ question.answer }}"></select>
+	<div class="wrap-details mt-lg-3">
+		<div class="wrap-detail-controls d-flex justify-content-between py-1">
+			<a class="small text-decoration-none" href="#">More Actions</a>
+			<a class="small text-decoration-none" href="#">Next</a>
+		</div>
+	</div>
+</div>

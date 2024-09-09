@@ -2,54 +2,10 @@
 <div class="container pt-3">
 	
 <form class="bg-light p-2 rounded" action="/edit/{{ question.id }}" method="post">
-	<div class="mb-3">
-  <label class="form-label">Question</label>
-  <textarea
-    type="text"
-    name="text"
-    class="form-control"
-    id="text"
-    required
-    style="border:2px solid rgb(220,220,220)"
-  />{{ question.text }}</textarea>
-	</div>
-   <div class="mb-3">
-  <label class="form-label">Answer</label>
-  <input
-    type="text"
-    name="answer"
-    class="form-control"
-    id="answer"
-    required
-    value="{{ question.answer }}"
-    style="border:2px solid rgb(220,220,220)"
-  />
-   </div>
-   <div class="mb-3">
-   	
-  <label class="form-label">Options</label>
-  <input
-    type="text"
-    name="options"
-    class="form-control"
-    id="options"
-    required
-    value="{{ question.options }}"
-    style="border:2px solid rgb(220,220,220)"
-  />
-   </div>
-   <div class="mb-3">
-  <label class="form-label">Quote</label>
-  <input
-    type="text"
-    name="quote"
-    class="form-control"
-    id="quote"
-    required
-    value="{{ question.quote }}"
-    style="border:2px solid rgb(220,220,220)"
-  />
-   </div>
+  {% include "textInput.html" %}
+  {% include "answerInput.html" %}
+  {% include "optionsInput.html" %}
+  {% include "quoteInput.html" %}
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </div>

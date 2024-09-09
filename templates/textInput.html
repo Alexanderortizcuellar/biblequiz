@@ -1,0 +1,36 @@
+<div class="wrap mb-2 card p-2 p-lg-3 shadow shadow-sm">
+	<div class="d-flex justify-content-between align-items-center py-1">
+		<label class="form-label fw-bold" for="text">Text</label>
+		<button type="button" class="btn btn-secondary btn-sm">
+			<i class="bi bi-copy mx-1 copy-text"></i>
+		</button>
+	</div>
+	<textarea class="form-control border border-1 border-dark-subtle" name="text" id="text" cols="30" rows="4"
+		style="color: #474747;height: max-content;">{{ question.text }}
+          </textarea>
+	<div class="wrap-details mt-lg-3">
+		<div class="wrap-detail-controls d-flex justify-content-between py-1">
+			<a class="small text-decoration-none" href="#details-text" data-bs-toggle="collapse"
+				role="button" aria-expanded="false" aria-controls="details-text">More Actions</a>
+			<a href="#" class="small text-decoration-none">Next</a>
+		</div>
+		<div class="details-inner p-2 collapse" id="details-text">
+			<div class="p-2 border border-1">
+				<div class="">
+					<ul class="nav">
+						<li class="nav-item">
+							<a class="nav-link active" href="#bible" aria-current="page"
+								data-bs-toggle="modal"
+								data-bs-target="#bibleSearchModal">Search Bible</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#definition">Dictionary</a>
+						</li>
+					</ul>
+				</div>
+				<!-- <div class="card-body"> -->
+				<!-- </div> -->
+			</div>
+		</div>
+	</div>
+</div>

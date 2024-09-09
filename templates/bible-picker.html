@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container">
+<div class="container mt-2">
 	<div class="d-flex flex-wrap con books-container">
 		{% for book in books %}
 		<div class="book border d-flex align-items-center justify-content-center m-0 bg-dark" style="width:60px;height:60px;color:{{ book.color }}">

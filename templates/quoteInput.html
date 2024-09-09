@@ -1,0 +1,24 @@
+<div class="wrap mb-2 card p-2 p-lg-3 shadow shadow-sm">
+	<div class="d-flex justify-content-between align-items-center py-1">
+		<label class="form-label fw-bold" for="quote">Quote</label>
+		<button type="button" class="btn btn-secondary btn-sm copy-quote">
+			<i class="bi bi-copy mx-1"></i>
+		</button>
+	</div>
+	<div class="wrap-actions d-flex gap-1 align-items-center">
+		<input class="form-control border border-1 border-dark-subtle" type="text" name="quote" id="quote"
+			value="{{ question.quote }}" required pattern="[1-3]*[A-Za-z]+" style="color: #474747" />
+		<div class="wrap-btn">
+			<button type="button" class="btn btn-primary btn-sm picker">
+				Pick
+			</button>
+		</div>
+	</div>
+	<div class="wrap-details mt-lg-3">
+		<div class="wrap-detail-controls d-flex justify-content-between py-1">
+			<a class="small text-decoration-none" href="#">More Actions</a>
+			<a class="small text-decoration-none" href="#">Next</a>
+		</div>
+		<div class="details-inner" id="details-quote"></div>
+	</div>
+</div>

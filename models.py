@@ -1,5 +1,6 @@
+from typing import List
 from sqlalchemy import ForeignKey
-from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
+from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 from flask_login import UserMixin
 from flask_sqlalchemy import SQLAlchemy
 
@@ -20,9 +21,10 @@ class User(UserMixin, db.Model):
     username: Mapped[str] = mapped_column(unique=True, nullable=False)
     email: Mapped[str] = mapped_column(unique=True, nullable=False)
     password: Mapped[str] = mapped_column(nullable=False)
-    questions: Mapped[list["Question"]] = db.relationship(
-        "Question", back_populates="user"
-    )  # pyright:ignore
+    # questions: Mapped[list["Question"]] = db.relationship(
+    #     "Question", back_populates="user"
+    # )
+    questions: Mapped[List["Question"]] = relationship(back_populates="user")
 
 
 class Question(db.Model):
@@ -34,7 +36,8 @@ class Question(db.Model):
     options: Mapped[str] = mapped_column(nullable=False)
     quote: Mapped[str] = mapped_column(nullable=False)
     user_id: Mapped[int] = mapped_column(ForeignKey("user.id"))
-    user: Mapped["User"] = db.relationship(back_populates="questions")  # pyright:ignore
+    # user: Mapped["User"] = db.relationship(back_populates="questions")
+    user: Mapped["User"] = relationship(back_populates="questions")
 
 
 class Bible(db.Model):
